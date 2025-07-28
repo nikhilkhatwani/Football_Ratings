@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2024 International Competition Ratings</title>
+    <script defer src="./ratings.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-left">
+        <div class="header" id="header">
+          <div class="header-left" id="header-left"></div>
+          <div class="header-right">
+            <div
+              class="toggle"
+              onclick="
+              const toggle = document.getElementById('toggle');
+              toggle.checked = !toggle.checked;
+              toggle.dispatchEvent(new Event('change'));
+            "
+            >
+              <label class="switch">
+                <input type="checkbox" id="toggle" />
+                <span class="slider"></span>
+              </label>
+
+              <p id="switch-p">
+                Euros <span>/</span>
+                <span id="switch-span">Copa América</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="matches-container" class="matches-container">
+          <div class="matches-container-selector">
+            <div class="selector-wrapper">
+              <div
+                class="matches-container-option active"
+                onclick="changeMatches('past')"
+              >
+                Past
+              </div>
+              <div
+                class="matches-container-option"
+                onclick="changeMatches('upcoming')"
+              >
+                Upcoming
+              </div>
+            </div>
+            <div class="pages-buttons">
+              <div class="pages-button">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 256 512"
+                  height="20px"
+                  width="20px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="pages-button">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 256 512"
+                  height="20px"
+                  width="20px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-right">
+        <div class="lineups">
+          <div class="lineups-header">
+            Top Rated Players
+            <div class="selected-match">
+              <div class="match"></div>
+            </div>
+          </div>
+
+          <div class="players-container">
+            <div class="none-selected">
+              <p>Select a match to see the top rated players</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
